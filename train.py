@@ -10,7 +10,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import FeatureUnion
 from sklearn.svm import LinearSVC
 
-
 class LexicalSyntacticTransformer(BaseEstimator, TransformerMixin):
     _superlatives = {
         "best", "worst", "greatest", "biggest", "smallest",
@@ -140,8 +139,6 @@ def train_bert(headlines: pd.Series, labels: pd.Series, output_dir: Path, epochs
 
     print("✔ BERT model saved to", output_dir / "bert_clickbait")
 
-
-# ----------------------------- CLI ---------------------------
 def main():
     ap = argparse.ArgumentParser(description="Clickbait headline detector")
     ap.add_argument("--data", default="clickbait_data.csv", help="Path to CSV dataset")
