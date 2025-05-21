@@ -14,11 +14,6 @@ except ModuleNotFoundError:
     pass
 
 
-def sigmoid(x: float) -> float:
-    x = max(min(x, 20), -20)
-    return 1.0 / (1.0 + math.exp(-x))
-
-
 def load_model(path: Path):
     """Load a joblib dump. Return (pipeline, held‑out accuracy|None)."""
     bundle = joblib.load(path)
